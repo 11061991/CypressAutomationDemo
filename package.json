@@ -1,0 +1,16 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules\\.bin\\cypress run",
+    "Test1": "npm run test -- -- spec \"cypress/integration/DEMO/*\""
+  },
+  "author": "pavan",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^6.2.1"
+  },
+  "dependencies": {},
+  "description": ""
+}
