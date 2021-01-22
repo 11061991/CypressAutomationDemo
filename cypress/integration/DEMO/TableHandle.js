@@ -17,6 +17,7 @@ describe('Test Suite', () => {
         pom.getTableHeaders().each(($header, index, $list)=>
      {
        const text=$header.text()
+       
        // cy.log(text)-- is printing all headers for the table
        cy.log(text)
        if(text.includes(this.data.CIHeader1)){
