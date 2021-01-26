@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo "install cypress dependencies..."
+  pre_build:
+    commands:
+      - echo "pre_build step"
+  build:
+    commands:
+      - cd cypress
+      - npm install
+      - node_modules/.bin/cypress run
+  post_build:
+    commands:
+      - echo "post_build step"

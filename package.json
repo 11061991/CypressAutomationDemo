@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules\\.bin\\cypress run",
-    "Test1": "npm run test --headed -- spec \"cypress/integration/DEMO/TableHandle.js/*\"" 
+    "Test1": "npm run test -- -- spec \"cypress/integration/DEMO/TableHandle.js/*\"" 
   },
   "author": "pavan",
   "license": "ISC",
