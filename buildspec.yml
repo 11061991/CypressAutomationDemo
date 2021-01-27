@@ -4,13 +4,20 @@ phases:
     runtime-version:
     nodejs: 12
     commands:
-      npm install cypress --save-dev
+     - echo "install cypress dependencies..."
+      - npm install -g gatsby-cli
+      - npm install -g purgecss
+      - apt-get update
+      - apt-get install -y libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 xvfb
   pre_build:
     commands:
-    - echo "install cypress dependencies..."
-      - npm install
+   - echo "pre_build step"
   build:
     commands:
+      - cd src
+      - cd new-gatsby-blog
+      - npm install
+      - npm run-script build
       - node_modules/.bin/cypress run
   post_build:
     commands:
