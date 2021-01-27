@@ -1,7 +1,8 @@
 version: 0.2
 phases:
   install:
-  nodejs: 12
+    runtime-version:
+    nodejs: 12
     commands:
       npm install -g @cypress/cli@6.2.1
   pre_build:
