@@ -1,17 +1,16 @@
 version: 0.2
 phases:
   install:
+  nodejs: 12
     commands:
-
-      - echo "install cypress dependencies..."
+      npm install -g @cypress/cli@6.2.1
   pre_build:
     commands:
-      - echo "pre_build step"
+    - echo "install cypress dependencies..."
+      - npm install
   build:
     commands:
-      - cd cypress
-      - npm install
-      - ./node_modules/.bin/cypress run
+      cypress run test
   post_build:
     commands:
       - echo "post_build step"
