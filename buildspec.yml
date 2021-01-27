@@ -11,7 +11,8 @@ phases:
       - npm install
   build:
     commands:
-      npm node_modules\.bin\cypress run
+      - npm run-script build
+      - node_modules/.bin/cypress run
   post_build:
     commands:
       - echo "post_build step"
