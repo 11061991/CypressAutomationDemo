@@ -1,7 +1,7 @@
 version: 0.2
 phases:
   install:
-    runtime-version:
+    runtime-versions:
     nodejs: 12
     commands:
       npm install cypress --save-dev
@@ -11,7 +11,7 @@ phases:
       - npm install
   build:
     commands:
-      npm node_modules\.bin\cypress run
+      npm node_modules\.bin\cypress run -- browser chrome
   post_build:
     commands:
       - echo "post_build step"
