@@ -1,11 +1,8 @@
 version: 0.2
 phases:
   install:
-    run-as: user
-    runtime-versions:
-    nodejs: 10 
-    commands:
-      npm install cypress --save-dev
+  commands:
+      -echo npm install cypress --save-dev
   pre_build:
     commands:
     - echo "install cypress dependencies..."
