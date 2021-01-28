@@ -13,6 +13,7 @@ build:
   commands:
    - pip3 install awscli --upgrade --user
    - aws s3 sync $BUILD_DIR s3://$S3_BUCKET --acl public-read
+   - npm install cypress --save-dev
    - node_modules/.bin/cypress run
 post_build:
   commands:
