@@ -5,7 +5,7 @@ phases:
     runtime-versions:
     nodejs: 10 
     commands:
-      npm install cypress --save-dev
+      -npm install cypress --save-dev
    finally:
     -echo "install step done"
     pre_build:
