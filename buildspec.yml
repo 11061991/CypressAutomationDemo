@@ -5,17 +5,16 @@ phases:
     runtime-versions:
     nodejs: 10 
     commands:
-     -npm i
+      npm install cypress --save-dev
+   finally:
+    -echo "install step done"
     pre_build:
     commands:
     - echo "install cypress dependencies..."
       - npm install
   build:
     commands:
-      -npm run server.js
-      -npm run test
-      -npm run build
-     -npm node_modules/.bin/cypress run
+      npm node_modules\.bin\cypress run
   post_build:
     commands:
       - echo "post_build step"
