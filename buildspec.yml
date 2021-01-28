@@ -1,15 +1,27 @@
 version: 0.2
+env:
+  variables:
+    JAVA_HOME: "C:\Program Files\nodejs\node_modules\npm"
+  parameter-store:
+    LOGIN_PASSWORD: /CodeBuild/dockerLoginPassword
 phases:
   install:
+    run-as: window
+    runtime-versions:
+    nodejs: 10 
     commands:
       npm install cypress --save-dev
-  pre_build:
+   finally:
+    -echo "install step done"
+  
+    pre_build:
     commands:
     - echo "install cypress dependencies..."
       - npm install
   build:
     commands:
-      npm node_modules\.bin\cypress run
+      npm run server.js
+      ./node_modules/.bin/cypress run
   post_build:
     commands:
       - echo "post_build step"
