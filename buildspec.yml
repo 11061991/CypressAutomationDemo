@@ -3,9 +3,6 @@ env:
  variables:
   BUILD_DIR: "dist"
   S3_BUCKET: "aws-cypress-demo"
- parameter-store:
-  AWS_ACCESS_KEY_ID: "/codebuild/AKIASCPSUCVZUR7PP5EM"
-  AWS_SECRET_ACCESS_KEY: "/codebuild/MBy1NIUP/oz0LyJk7HSseXERG8o7psWjzL3Xcy9Q"
 phases:
  install:
   runtime-versions:
