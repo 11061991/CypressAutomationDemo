@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules\\.bin\\cypress run",
-    "HeadTest": "npm run test -- headed",
-    "chromeTest": "npm run test --browser chrome",
-    "Test1": "npm run test -- -- spec \"cypress/integration/DEMO/*\""
+    "HeadTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "Test1": "npm run test -- -- spec \"cypress//integration//DEMO/*\""
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
