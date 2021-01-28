@@ -15,6 +15,7 @@ build:
    - npm run build
    - pip3 install awscli --upgrade --user
    - aws s3 sync $BUILD_DIR s3://$S3_BUCKET --acl public-read
+   - node_modules/.bin/cypress run
 post_build:
   commands:
    SUCCESS=$CODEBUILD_BUILD_SUCCEEDING node ./bin/notify.js
