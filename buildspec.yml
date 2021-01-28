@@ -8,7 +8,6 @@ phases:
   runtime-versions:
    nodejs: 10
   commands:
-   - git checkout master
    - npm i
 build:
   commands:
