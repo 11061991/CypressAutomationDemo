@@ -12,10 +12,6 @@ phases:
       - echo "pre_build step"
   build:
     commands:
-      - npm install
-      - npm run-script build
-      - aws s3 cp public/ "s3://aws-cypress-demo/" --recursive --cache-control 'public, max-age=2628000'
-      - aws cloudfront create-invalidation --distribution-id E3SMHPICHT13MG --paths '/*'
       - node_modules/.bin/cypress run
   post_build:
     commands:
