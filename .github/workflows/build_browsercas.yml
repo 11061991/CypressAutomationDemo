@@ -30,14 +30,16 @@ cypress-test:
       continue-on-error: false
       
       -name: merge test case report
-       run: |
-           mkdir public
+       
+       run:| 
+          mkdir public
          cp -r cypress/videos public/videos
          cp -r cypress/screeshots public/screenshots
          
-      -name: merge report
-       run: npm run combine:report
+     
+       name:merge repo
+       run:npm run combine:report
           
-       -name: generate htlm report 
-        run: npm run generate:report 
+       -name:generate htlm report 
+        run:npm run generate:report 
          
