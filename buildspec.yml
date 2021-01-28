@@ -1,9 +1,4 @@
 version: 0.2
-env:
-  variables:
-    JAVA_HOME: "C:\Program Files\nodejs\node_modules\npm"
-  parameter-store:
-    LOGIN_PASSWORD: /CodeBuild/dockerLoginPassword
 phases:
   install:
     run-as: window
