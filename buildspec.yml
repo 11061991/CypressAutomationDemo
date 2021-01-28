@@ -1,16 +1,24 @@
 version: 0.2
+env:
+ variables:
+  BUILD_DIR: "dist"
+  S3_BUCKET: "aws-cypress-demo"
+ parameter-store:
+  AWS_ACCESS_KEY_ID: "/codebuild/AKIASCPSUCVZUR7PP5EM"
+  AWS_SECRET_ACCESS_KEY: "/codebuild/MBy1NIUP/oz0LyJk7HSseXERG8o7psWjzL3Xcy9Q"
 phases:
-  install:
-    commands:
-      - echo "install cypress dependencies..."
-      - npm install -g gatsby-cli
-      - npm install -g purgecss
-  pre_build:
-    commands:
-      - echo "pre_build step"
-  build:
-    commands:
-      - node_modules/.bin/cypress run
-  post_build:
-    commands:
-      - echo "post_build step"
+ install:
+  runtime-versions:
+   nodejs: 10
+  commands:
+   - git checkout master
+   - npm i
+build:
+  commands:
+   - npm run test
+   - npm run build
+   - pip3 install awscli --upgrade --user
+   - aws s3 sync $BUILD_DIR s3://$S3_BUCKET --acl public-read
+post_build:
+  commands:
+   SUCCESS=$CODEBUILD_BUILD_SUCCEEDING node ./bin/notify.js
