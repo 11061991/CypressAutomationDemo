@@ -5,13 +5,17 @@
   "scripts": {
     "test": "node_modules\\.bin\\cypress run",
     "HeadTest": "npm run test -- headed",
-    "chromeTest":"npm run test -- browser chrome",
-    "Test1": "npm run test -- -- spec \"cypress/integration/DEMO/TableHandle.js/*\""
+    "chromeTest": "npm run test --browser chrome",
+    "Test1": "npm run test -- -- spec \"cypress/integration/DEMO/*\""
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   },
   "author": "pavan",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^6.2.1",
+    "cypress-cucumber-preprocessor": "^3.6.0",
     "cypress-downloadfile": "^1.2.0",
     "cypress-file-upload": "^4.1.1",
     "mocha": "^8.2.1",
