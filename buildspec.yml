@@ -12,6 +12,7 @@ phases:
       - echo "pre_build step"
   build:
     commands:
+      - npm install
       - node_modules/.bin/cypress run
   post_build:
     commands:
