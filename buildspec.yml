@@ -6,10 +6,6 @@ phases:
     nodejs: 10 
     commands:
     -npm i
-    -npm install cypress --save-dev 
-   finally:
-    -echo "install step done"
-  
     pre_build:
     commands:
     - echo "install cypress dependencies..."
