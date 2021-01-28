@@ -12,8 +12,6 @@ phases:
       - echo "pre_build step"
   build:
     commands:
-      - cd src
-      - cd new-gatsby-blog
       - npm install
       - npm run-script build
       - aws s3 cp public/ "s3://aws-cypress-demo/" --recursive --cache-control 'public, max-age=2628000'
