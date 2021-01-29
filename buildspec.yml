@@ -11,7 +11,7 @@ phases:
     - npm i
     - npm install cypress --save-dev
     - node_modules/.bin/cypress open
-    - node_modules/.bin/cypress run --spec cypress/integration/DEMO/TableHandles.js
+    - ./node_modules/.bin/cypress run --spec cypress/integration/DEMO/TableHandle.js
 pre_build:
   commands:
     - echo "install cypress dependencies..."  

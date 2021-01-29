@@ -1,0 +1,16 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=46286
+END=66999
+title=Test Suite Test1: Verify Table row column attributes
+[CHAPTER]
+TIMEBASE=1/1000
+START=81814
+END=87733
+title=Test Suite Test2: Verify Table row column attributes
+[CHAPTER]
+TIMEBASE=1/1000
+START=90851
+END=93682
+title=Test Suite Test3: Verify Table row column attributes
