@@ -1,1 +1,2 @@
-./cypress//results//**
+./cypress/results//**
+./cypress/video/**
