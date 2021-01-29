@@ -9,7 +9,7 @@ phases:
    nodejs: 12
   commands:
     - npm install
-    -npm config set fund false --global  
+    - npm config set fund false --global  
 pre-build:
   commands:
     - echo "install cypress dependencies..."  
