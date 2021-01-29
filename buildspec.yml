@@ -9,15 +9,17 @@ phases:
    nodejs: 12
   commands:
     - npm install
-    - npm config set fund false --global  
-pre-build:
+    - npm config set fund false --global
+    - apt-get install -y libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 xvfb  
+pre_build:
   commands:
-    - echo "install cypress dependencies..."  
+    - echo "install cypress dependencies..."
+    - npm install cypress --save-dev  
 build:
   commands:
    - pip3 install awscli --upgrade --user
    - aws s3 sync $BUILD_DIR s3://$S3_BUCKET --acl public-read
-   - npm install cypress --save-dev
+   - node server.js $BUILD_DIR & npx wait-on http://localhost:3000
    - node_modules/.bin/cypress run --spec cypress/integration/DEMO/TableHandles.js 
 post_build:
   commands:
