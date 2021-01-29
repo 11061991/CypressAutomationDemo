@@ -6,12 +6,15 @@ env:
 phases:
  install:
   runtime-versions:
-   nodejs: 10
+   nodejs: 12
   commands:
-   - npm i
+    - npm install
+    -npm config set fund false --global  
+pre-build:
+  commands:
+    - echo "install cypress dependencies..."  
 build:
   commands:
-    -npm config set fund false --global
    - pip3 install awscli --upgrade --user
    - aws s3 sync $BUILD_DIR s3://$S3_BUCKET --acl public-read
    - npm install cypress --save-dev
