@@ -19,4 +19,4 @@ phases:
       - ./node_modules/.bin/cypress run --spec cypress/integration/DEMO/TableHandle.js
   post_build:
     commands:
-      SUCCESS=$CODEBUILD_BUILD_SUCCEEDING node ./bin/notify.js
+      - echo "post_build step"
