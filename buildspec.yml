@@ -10,17 +10,13 @@ phases:
   commands:
     - npm i
     - npm install cypress --save-dev
-    - node_modules/.bin/cypress open
-    - ./node_modules/.bin/cypress run --spec cypress/integration/DEMO/TableHandle.js
 pre_build:
   commands:
-    - echo "install cypress dependencies..."  
+    - echo "pre_build step"
 build:
   commands:
-    - node server.js $BUILD_DIR & npx wait-on http://localhost:3000
-    - node_modules/.bin/cypress run --spec cypress/integration/DEMO/TableHandles.js 
-    - pip3 install awscli --upgrade --user
-    - aws s3 sync $BUILD_DIR s3://$S3_BUCKET --acl public-read   
+    - node_modules/.bin/cypress open
+    - ./node_modules/.bin/cypress run --spec cypress/integration/DEMO/TableHandle.js
 post_build:
   commands:
    SUCCESS=$CODEBUILD_BUILD_SUCCEEDING node ./bin/notify.js
