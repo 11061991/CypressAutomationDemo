@@ -6,6 +6,8 @@ env:
 phases:
   install:
     runtime-versions:
+      java: openjdk8
+    runtime-versions:
       nodejs: 12
     commands:
       - npm i
