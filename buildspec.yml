@@ -4,10 +4,8 @@ env:
   BUILD_DIR: "dist"
   S3_BUCKET: "aws-cypress-demo"
 phases:
-  install:
-   runtime-versions:
-     nodejs: 10    
-   commands:
+  install:    
+    commands:
       - npm i
       - npm install cypress --save-dev
   pre_build:
