@@ -15,7 +15,7 @@ phases:
       - echo "pre_build step"
   build:
     commands:
-      - ./node_modules/.bin/cypress run -- spec cypress/integration/DEMO/DummyTest.js
+      - ./node_modules/.bin/cypress -- spec cypress/integration/DEMO/DummyTest.js
   post_build:
     commands:
       - echo "post_build step"

@@ -1,16 +1,16 @@
 ;FFMETADATA1
 [CHAPTER]
 TIMEBASE=1/1000
-START=46286
-END=66999
+START=5931
+END=59705
 title=Test Suite Test1: Verify Table row column attributes
 [CHAPTER]
 TIMEBASE=1/1000
-START=81814
-END=87733
+START=94394
+END=113495
 title=Test Suite Test2: Verify Table row column attributes
 [CHAPTER]
 TIMEBASE=1/1000
-START=90851
-END=93682
+START=107988
+END=132603
 title=Test Suite Test3: Verify Table row column attributes
