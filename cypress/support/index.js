@@ -18,19 +18,3 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-require('dotenv').config();
-const {app, BrowserWindow, ipcMain} = require('electron');
-const path = require('C:\Users\priyanka.s45\Documents\cypress_automation\node_modules\electron-to-chromium\chromium-versions.js');
-const url = require('https://github.com/iamgollum/cypress-example-kitchensink/tree/281-ibm-cloud-pipeline');
-const {app, BrowserWindow} = electron;
-let win;
-function createWindow() {
-  const urlArg = process.argv[2];
-  win = new BrowserWindow({
-    width: 1024,
-    height: 768,
-    webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
-    }
-  })}
