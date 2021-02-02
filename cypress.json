@@ -3,8 +3,6 @@
     "URL":"https://github.com/iamgollum/cypress-example-kitchensink/tree/281-ibm-cloud-pipeline"
     
   },
-  "contextIsolation": true,
-  "nodeIntegration": false,
   "video" : false,
     "reporter": "mochawesome",
     "reporterOptions": {

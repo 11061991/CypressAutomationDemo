@@ -20,8 +20,8 @@ import './commands'
 // require('./commands')
 require('dotenv').config();
 const {app, BrowserWindow, ipcMain} = require('electron');
-const path = require('path');
-const url = require('url');
+const path = require('C:\Users\priyanka.s45\Documents\cypress_automation\node_modules\electron-to-chromium\chromium-versions.js');
+const url = require('https://github.com/iamgollum/cypress-example-kitchensink/tree/281-ibm-cloud-pipeline');
 const {app, BrowserWindow} = electron;
 let win;
 function createWindow() {
