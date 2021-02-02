@@ -18,8 +18,10 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-const mainWindow = new BrowserWindow({
-    webPreferences: {
-      contextIsolation: true
-    }
-  })
+App.mainWindow = new BrowserWindow({ width: width, height: height, show: false, webPreferences: {
+    nodeIntegration: true,
+    contextIsolation: true,
+    backgroundThrottling: false
+}
+});
+
