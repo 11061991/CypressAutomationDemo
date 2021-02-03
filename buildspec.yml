@@ -14,6 +14,18 @@ phases:
   build:
     commands:
       - ./node_modules/.bin/cypress run -- spec DEMO/TableHandle.js
+    finally: 
+      - npx mochawesome-merge "cypress/reports/separate-reports/*.json" > mochawesome.json 
+      - npx marge mochawesome.json 
+      - mv mochawesome-report cypress/ 
+      - ls -R cypress 
+  artifacts: 
+    files: 
+      - 'reports/**/*' 
+      - 'screenshots/**/*' 
+      - 'videos/**/*' 
+      - 'mochawesome-report/**/*' 
+    base-directory: 'cypress'
   post_build:
     commands:
       - echo "post_build step"
