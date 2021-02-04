@@ -7,7 +7,8 @@ phases:
   install:    
     commands:
       - npm i
-      -- apt-get -y install google-chrome-stable
+      - npm install mocha@8.2.1 mochawesome mochawesome-merge mochawesome-report-generator
+      - apt-get -y install google-chrome-stable
   pre_build:
     commands:
       - echo "pre_build step"
