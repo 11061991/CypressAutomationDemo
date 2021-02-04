@@ -10,7 +10,8 @@
       "overwrite": true,
       "html": true,
       "json": true,
-      "timestamp": "ddmmyyyy_HHMMss"
+      "timestamp": "ddmmyyyy_HHMMss",
+      "nodeIntegration": true
     }
   
   }

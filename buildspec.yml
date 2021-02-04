@@ -7,8 +7,10 @@ phases:
   install:    
     commands:
       - npm i
+      - npm i -D cypress @cypress/electron-plugin
+      - npm uninstall cypress --save-dev
       - npm install cypress --save-dev
-      - npm install mocha@5.2.0 mochawesome mochawesome-merge mochawesome-report-generator
+      - npm install mocha@8.2.1 mochawesome mochawesome-merge mochawesome-report-generator
   pre_build:
     commands:
       - echo "pre_build step"
