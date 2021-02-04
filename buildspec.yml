@@ -15,7 +15,7 @@ phases:
       - echo "pre_build step"
   build:
     commands:
-      - ./node_modules/.bin/cypress run -- spec DEMO/DummyTest.js
+       - ./node_modules/.bin/cypress run -- spec DEMO/TableHandle.js
     finally: 
       - npx mochawesome-merge "cypress/results/*.json" > mochawesome.json 
       - npx marge mochawesome.json 
