@@ -6,7 +6,6 @@ env:
 phases:
   install:    
     commands:
-      - cd cypress
       - npm i
       - npm install cypress --save-dev
       - npm install mocha@5.2.0 mochawesome mochawesome-merge mochawesome-report-generator
@@ -17,7 +16,7 @@ phases:
     commands:
        - ./node_modules/.bin/cypress run -- spec DEMO/TableHandle.js
     finally: 
-      - npx mochawesome-merge "cypress/results/*.json" > mochawesome.json 
+      - npx mochawesome-merge "cypress/reports/seperate-reports/*.json" > mochawesome.json 
       - npx marge mochawesome.json 
       - mv mochawesome-report cypress/ 
       - ls -R cypress
@@ -26,7 +25,7 @@ phases:
       - echo "post_build step" 
 artifacts: 
   files: 
-    - 'results/**/*' 
+    - 'reports/**/*' 
     - 'screenshots/**/*' 
     - 'videos/**/*' 
     - 'mochawesome-report/**/*' 
