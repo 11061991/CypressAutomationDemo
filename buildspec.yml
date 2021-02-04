@@ -7,12 +7,13 @@ phases:
   install:    
     commands:
       - npm i
+      -- apt-get -y install google-chrome-stable
   pre_build:
     commands:
       - echo "pre_build step"
   build:
     commands:
-       - ./node_modules/.bin/cypress run -- spec DEMO/TableHandle.js
+       - ./node_modules/.bin/cypress run -- spec DEMO/TableHandle.js --browser chrome
     finally: 
       - npx mochawesome-merge "cypress/reports/seperate-reports/*.json" > mochawesome.json 
       - npx marge mochawesome.json 

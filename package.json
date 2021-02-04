@@ -20,7 +20,7 @@
   "license": "ISC",
   
   "devDependencies": {
-    "cypress": "6.4.0",
+    "cypress": "^6.4.0",
     "cypress-cucumber-preprocessor": "^4.0.0",
     "cypress-downloadfile": "^1.2.0",
     "cypress-file-upload": "^4.1.1",
@@ -28,8 +28,9 @@
     "mochawesome": "^6.2.1",
     "mochawesome-merge": "^4.2.0",
     "mochawesome-report-generator": "^5.1.0",
-    "electron-builder": "22.9.1",
-    "electron-notarize": "1.0.0"
+    "electron-builder": "^22.9.1",
+    "electron-notarize": "^1.0.0",
+    "electronVersion": "^11.0.3"
   },
   "dependencies": {},
   "description": ""
