@@ -1,7 +1,8 @@
 {
-  "name": "ls",
-  "version": "1.0.0",
+  "name": "cypress",
+  "version": "6.4.0",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "node_modules//.bin//cypress run",
     "HeadTest": "npm run test -- --headed",
@@ -14,9 +15,6 @@
   "author": "pavan",
   "license": "ISC",
   
-  "optionalDependencies": {
-    "fsevents": "1.2.13"
-  },
   "devDependencies": {
     "cypress-cucumber-preprocessor": "^4.0.0",
     "cypress-downloadfile": "^1.2.0",
@@ -25,7 +23,8 @@
     "mochawesome": "^6.2.1",
     "mochawesome-merge": "^4.2.0",
     "mochawesome-report-generator": "^5.1.0",
-    "cypress": "https://cdn.cypress.io/beta/npm/3.5.0/circle-test-electron-app-4964-05caf31764a934d1446b46ae62b23dacfaef6afc-151611/cypress.tgz"
+    "electron-builder": "22.9.1",
+    "electron-notarize": "1.0.0"
   },
   "dependencies": {},
   "description": ""
