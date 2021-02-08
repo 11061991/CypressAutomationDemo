@@ -12,7 +12,7 @@ phases:
       - echo "pre_build step"
   build:
     commands:
-      - ./node_modules/.bin/cypress run -- spec DEMO/TableHandle.js
+      - ./node_modules/.bin/cypress run --browser chromium --headless --config http://localhost:8080
     finally: 
       - npx mochawesome-merge "cypress/reports/seperate-reports/*.json" > mochawesome.json 
       - npx marge mochawesome.json 
