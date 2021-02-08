@@ -12,9 +12,9 @@ phases:
       - echo "pre_build step"
   build:
     commands:
-       - export CONFIG="baseUrl=$CYPRESS_BASE_URL"
-       - echo $CONFIG
-       - NO_COLOR=1 ./node_modules/.bin/cypress run --browser chromium --headless --config "$CONFIG"
+      - export CONFIG="baseUrl=$CYPRESS_BASE_URL"
+      - echo $CONFIG
+      - NO_COLOR=1 ./node_modules/.bin/cypress run --browser chromium --headless --config "$CONFIG"
     finally: 
       - npx mochawesome-merge "cypress/reports/seperate-reports/*.json" > mochawesome.json 
       - npx marge mochawesome.json 
