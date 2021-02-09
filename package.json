@@ -13,9 +13,7 @@
     "chromeTest": "npm run test -- --browser chrome",
     "Test1": "npm run test -- -- spec \"cypress//integration//DEMO/*\""
   },
-  "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true
-  },
+
   "author": "pavan",
   "license": "ISC",
   
