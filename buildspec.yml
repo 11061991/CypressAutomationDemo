@@ -7,7 +7,6 @@ phases:
   install:    
     commands:
       - npm i
-      - npm run build
       - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
       - npm start & npx wait-on http://127.0.0.1:8080
 cache:
