@@ -8,9 +8,8 @@ phases:
     commands:
       - npm i
       - npm run build
-      - npm install wait-on
       - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
-      - "npm start & npx wait-on http://127.0.0.1:8080"
+      - npm start & npx wait-on http://127.0.0.1:8080
   pre_build:
     commands:
       - echo "pre_build step"
