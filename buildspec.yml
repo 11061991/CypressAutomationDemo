@@ -10,14 +10,16 @@ phases:
       - npm run build
       - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
       - npm start & npx wait-on http://127.0.0.1:8080
+cache:
+  paths:
+    - node_modules/**/*
   pre_build:
     commands:
       - echo "pre_build step"
   build:
     commands:
-      - ./node_modules/.bin/cypress run -- spec DEMO/TableHandle.js
-    finally:
       - 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/seperate-reports,overwrite=true,html=true,json=true,timestamp=mmddyyyy_HHMMss"' 
+    finally:
       - npx mochawesome-merge "cypress/reports/seperate-reports/*.json" > mochawesome.json 
       - npx marge mochawesome.json 
       - mv mochawesome-report cypress/ 
