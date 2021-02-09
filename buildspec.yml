@@ -7,15 +7,18 @@ phases:
   install:    
     commands:
       - npm i
-      - npm install mocha@8.2.1 mochawesome mochawesome-merge mochawesome-report-generator
-      - apt-get -y install google-chrome-stable
+      - npm run build
+      - npm install wait-on
+      - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
+      - "npm start & npx wait-on http://127.0.0.1:8080"
   pre_build:
     commands:
       - echo "pre_build step"
   build:
     commands:
-      - ./node_modules/.bin/cypress run -- spec DEMO/TableHandle.js --browser chrome
-    finally: 
+      - ./node_modules/.bin/cypress run -- spec DEMO/TableHandle.js
+    finally:
+      - 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/seperate-reports,overwrite=true,html=true,json=true,timestamp=mmddyyyy_HHMMss"' 
       - npx mochawesome-merge "cypress/reports/seperate-reports/*.json" > mochawesome.json 
       - npx marge mochawesome.json 
       - mv mochawesome-report cypress/ 
