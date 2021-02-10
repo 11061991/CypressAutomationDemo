@@ -8,11 +8,10 @@
    "video" : false,
     "reporterOptions": {
       "reportDir": "cypress/report/mochawesome-report",
-      "overwrite": true,
+      "overwrite": false,
       "html": true,
       "json": true,
-      "timestamp": "ddmmyyyy_HHMMss",
-      "nodeIntegration": true
+      "timestamp": "ddmmyyyy_HHMMss"
     }
   
   }
