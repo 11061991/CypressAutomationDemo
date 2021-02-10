@@ -7,12 +7,11 @@ phases:
   install:    
     commands:
       - npm i
-      - npm run build
+      - npm install cypress --save-dev
+      - npm install wait-on
       - npm install mocha mochawesome mochawesome-merge mochawesome-report-generator
-      - npx wait-on http://127.0.0.1:8080
-cache:
-  paths:
-    - node_modules/**/*
+      - "npm start & npx wait-on http://localhost:8080”
+
   pre_build:
     commands:
       - echo "pre_build step"
