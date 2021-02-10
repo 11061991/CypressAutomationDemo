@@ -16,20 +16,20 @@ phases:
       - echo "pre_build step"
   build:
     commands:
-      - ./node_modules/.bin/cypress run -- spec DEMO/TableHandle.js --reporter mochawesome --reporter-options "reportDir=cypress/report/seperate-reports,overwrite=true,html=true,json=true,timestamp=mmddyyyy_HHMMss"' 
+      - 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
     finally:
-      - npx mochawesome-merge "cypress/reports/seperate-reports/*.json" > mochawesome.json 
-      - npx marge mochawesome.json 
-      - mv mochawesome-report cypress/ 
-      - ls -R cypress
+      - npx mochawesome-merge@4 cypress/report/mochawesome-report/*.json > cypress/report/mochawesome.json
+      - npx marge cypress/report/mochawesome.json
   post_build:
     commands:
       - echo "post_build step" 
-artifacts: 
+artifacts:
+  #base-directory: cypress
+  #configFilePath: "**/mochawesome.json" 
   files: 
     - 'reports/**/*' 
     - 'screenshots/**/*' 
     - 'videos/**/*' 
     - 'mochawesome-report/**/*' 
-  base-directory: 'cypress'
+  
  
