@@ -15,7 +15,7 @@ phases:
       - echo "pre_build step"
   build:
     commands:
-      - npm run \"cypress/integration/DEMO/*\""
+      - npm run Test1
     finally:
       - npx mochawesome-merge@4 cypress/report/mochawesome-report/*.json > cypress/report/mochawesome.json
       - npx marge cypress/report/mochawesome.json
